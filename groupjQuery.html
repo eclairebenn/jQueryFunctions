@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Page Title</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="groupjQuery.css"/>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('button.hidebutton').click(function(){
+                    $('p.hide').hide();
+                });
+                $('button.showbutton').click(function(){
+                    $('p.hide').show();
+                });
+                $('button.togglebutton').click(function(){
+                    $('p.toggle').toggle();
+                });
+                $('button.slideupbutton').click(function(){
+                    $('p.slide').slideUp();
+                });
+                $('button.slidedownbutton').click(function(){
+                    $('p.slide').slideDown();
+                });
+                $('button.slidetogglebutton').click(function(){
+                    $('p.slidetoggle').slideToggle();
+                });
+                $('button.fadeinbutton').click(function(){
+                    $('p.fade').fadeIn();
+                });
+                $('button.fadeoutbutton').click(function(){
+                    $('p.fade').fadeOut();
+                });
+                $('button.newclassbutton').click(function(){
+                    $('p.class').addClass("newclass")
+                })
+                $('button.beforebutton').click(function(){
+                    $('p.beforeandafter').before("<p>I am secret text</p>");
+                });
+                $('button.afterbutton').click(function(){
+                    $('p.beforeandafter').after("<p>I am even more secret text</p>");
+                });
+                $('button.appendbutton').click(function(){
+                    $('p.append').append("<p>Surprise!!  I found my way in here!!</p>");
+                });
+                $('button.htmlbutton').click(function(){
+                    $('p.html').html("<p>new stuff</p>");
+                });
+                $('button.attrbutton').click(function(){
+                    var title = $( "span" ).attr( "title" );
+                    $( "div.title" ).text( title );
+                });
+                
+                function displayVal(){
+                    var val = $(".animal").val();
+                    $("p.valuetext").html("<p>The best animal in the world is " + val + "!</p>");
+                };
+
+                $('button.textbutton').click(function(){
+                    $("p.textp").text("<p>A new paragraph</p>");
+                });
+
+                $("p.data").data("info", {first: 56, last:24} );
+                $('button.databutton').click(function(){
+                    $("span.showdata").text($("p.data").data("info").first);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container">
+        <h1>jQuery Functions Reference Guide</h1>
+        <div class="jqfunction">
+            <button class="hidebutton">Click to hide</button>
+            <button class="showbutton">Click to show</button>
+            <div class="text">
+                <h2 class="subtitle">.hide and .show</h2>
+                <p class="hide">Watch me disappear and reappear!</p>
+            </div>
+        </div>
+        <div class="jqfunction">
+            <button class="togglebutton">Click to toggle</button>
+            <div class="text">
+                <h2 class="subtitle">.toggle</h2>
+                <p class="toggle">Click to make me dissapear and click again to make me reappear!</p>
+            </div>
+        </div>
+        <div class="jqfunction">
+            <button class="slideupbutton">Click to slide up!</button>
+            <button class="slidedownbutton">Click to slide down!</button>
+            <div class="text">
+                <h2 class="subtitle">.slideUp and .slideDown</h2>
+                <p class="slide">Watch me fly away and come back down!</p>
+            </div>
+        </div>
+        <div class="jqfunction">
+            <button class="slidetogglebutton">Click to toggle!</button>
+            <div class="text">
+                <h2 class="subtitle">.slideToggle</h2>
+                <p class="slidetoggle">Watch me fly away and come back down!</p>
+            </div>
+        </div>
+        <div class="jqfunction">
+            <button class="fadeinbutton">Click to fade in</button>
+            <button class="fadeoutbutton">Click to fade out</button>
+            <div class="text">
+                <h2 class="subtitle">.fadeIn and .fadeOut</h2>
+                <p class="fade">Watch me fade away and fade back in!</p>
+            </div>
+        </div>
+        <div class="jqfunction">
+            <button class="newclassbutton">Click to add class to text!</button>
+            <div class="text">
+                <h2 class="subtitle">.addClass</h2>
+                <p class="class">Watch me change colors by adding a class with blue css!</p>
+            </div>
+        </div>
+        <div class="jqfunction">
+            <button class="beforebutton">Click me for before</button>
+            <button class="afterbutton">Click me for after</button>
+            <div class="text">
+                <h2 class="subtitle">.before and .after</h2>
+                <p class="beforeandafter">I am a random piece of text!</p>
+            </div>
+        </div>
+        <div class="jqfunction">
+            <button class="appendbutton">Click me to append!</button>
+            <div class="text">
+                <h2 class="subtitle">.Append</h2>
+                <p class="append">Click the button to append a new paragraph!</p>
+            </div>
+        </div>
+        <div class="jqfunction">
+            <button class="htmlbutton">Click me to reveal the HTML!</button>
+            <div class="text">
+                <h2 class="subtitle">.html</h2>
+                <p class="html">Click the button to show the HTML for this paragraph!</p>
+            </div>
+        </div>
+        <div class="jqfunction">
+            <button class="attrbutton">Click me!</button>
+            <div class="text">
+                <h2 class="subtitle">.attr</h2>
+                <p class="attr">This paragraph has <span title="monkey">white bold letters.</span></p>
+                <p>The title attribute of the letters is <div class="title"></div></p>
+            </div>
+        </div>
+        <div class="jqfunction">
+            <div class="text">
+                <h2 class="subtitle">.val</h2>
+                <p class="valuetext"></p>
+                <select class="animal">
+                    <option value="cats">Cats</option>
+                    <option value="dogs">Dogs</option>
+                </select>
+            </div>
+        </div>
+        <div class="jqfunction">
+            <button class="textbutton">Click me!</button>
+            <div class="text">
+                <h2 class="subtitle">.text</h2>
+                <p class="textp">My first paragraph</p>
+            </div>
+        </div>
+        <div class="jqfunction">
+            <button class="databutton">Click me!</button>
+            <div class="text">
+                <h2 class="subtitle">.data</h2>
+                <p class="data">This is where I have stored <span class="showdata"></span></p>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>

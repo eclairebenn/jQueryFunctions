@@ -1,0 +1,25 @@
+#container{
+    width: 970px;
+    background-color: aliceblue;
+    padding: 20px;
+}
+
+.jqfunction{
+    width: 930px;
+    background-color: gray;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+button, .text{
+    display: inline-block;
+}
+
+.newclass{
+    color: aqua;
+}
+
+span{
+    font-weight: bold;
+    color: white;
+}
